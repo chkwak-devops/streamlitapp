@@ -9,54 +9,39 @@ from datetime import datetime as dt
 import datetime
 
 
-
 # 페이지 기본 설정
 st.set_page_config(
     page_icon="🐶",
-    page_title="이마트 StoreProduct개발2팀 Streamlit",
+    page_title="이마트 StoreProduct 개발2팀 Streamlit",
     layout="wide",
 )
-
-
-# 사이드 바 설정 
 with st.sidebar:
-    date = st.date_input(
-        "조회 시작일을 선택해 주세요",
-        datetime.datetime(2022, 1, 1)
-    )
-
-    code = st.text_input(
-        '종목코드', 
-        value='',
-        placeholder='종목코드를 입력해 주세요'
-    )
-
-
-    st.markdown('---')
 
     st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io 링크](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-            forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-            Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
+        """ ## Streamlit 구현 예시 """)
+    st.markdown('---')
+
+
+
+tab1, tab2, tab3 = st.tabs(['Cat', 'Dog', 'Owl'])
+
+with tab1:
+    st.header('Tab1')
+    st.image('https://static.streamlit.io/examples/cat.jpg')
+    
+with tab2:
+    st.header('Tab2')
+    st.image('https://static.streamlit.io/examples/dog.jpg')
+
+with tab3:
+    st.header('Tab3')
+    st.image('https://static.streamlit.io/examples/owl.jpg')
 
 
 
 # 로딩바 구현하기
 with st.spinner(text="페이지 로딩중..."):
-    sleep(2)
+    sleep(1)
 
 # 페이지 헤더, 서브헤더 제목 설정
 st.header("이마트 StoreProduct개발2팀페이지에 오신걸 환영합니다👋")

@@ -7,7 +7,6 @@ from datetime import datetime as dt
 import datetime
 
 
-
 # st.set_page_config(layout="wide")
 
 # 페이지 기본 설정
@@ -28,7 +27,21 @@ with st.sidebar:
         placeholder='종목코드를 입력해 주세요'
     )
 
+    st.markdown('''
+### API KEY 발급 방법
+1. https://beta.openai.com/ 회원가입
+2. https://beta.openai.com/account/api-keys 접속
+3. `create new secret key` 클릭 후 생성된 KEY 복사
+    ''')
+    value=''
+    apikey = st.text_input(label='OPENAI API 키', placeholder='OPENAI API키를 입력해 주세요', value=value)
 
+    if apikey:
+        st.markdown(f'OPENAI API KEY: `{apikey}`')
+
+    st.markdown('---')
+
+    st.markdown(''' 메뉴 1 ''') 
 
 
 
