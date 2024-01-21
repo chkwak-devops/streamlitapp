@@ -4,63 +4,66 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+from io import BytesIO
 from time import sleep
 from datetime import datetime as dt
 import datetime
-
-
+import random
+import requests
 
 # 페이지 기본 설정
 st.set_page_config(
+    # emoji: https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
     page_icon="🐶",
-    page_title="이마트 StoreProduct개발2팀 Streamlit",
+    page_title="이마트 StoreProduct 개발2팀 Streamlit :sunglasses:",
     layout="wide",
 )
 
 
 # 사이드 바 설정 
 with st.sidebar:
-    date = st.date_input(
-        "조회 시작일을 선택해 주세요",
-        datetime.datetime(2022, 1, 1)
-    )
 
-    code = st.text_input(
-        '종목코드', 
-        value='',
-        placeholder='종목코드를 입력해 주세요'
-    )
+    st.markdown(
+        """ ## Streamlit 설치 방법 
+        """)
+    console_command = '''
+    $ conda create --name streamlit python=3.9
+    $ conda activate streamlit
+    $ pip install streamlit 
+    '''
+    st.code(console_command, language="shellSession")
+
+    st.markdown(
+        """ ## Streamlit 실행  방법 
+        """)
+    console_command = '''
+    $ streamlit run [작성화일명]
+    '''
+    st.code(console_command, language="shellSession")
+
+    
+    st.markdown(
+        """ ## Streamlit 상세 가이드
+          """)
+    
+    st.markdown(
+        """ [https://docs.streamlit.io](https://docs.streamlit.io)
+          """)
+
+
 
 
     st.markdown('---')
 
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io 링크](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-            forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-            Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
-
-
 
 # 로딩바 구현하기
 with st.spinner(text="페이지 로딩중..."):
-    sleep(2)
+    sleep(1)
 
 # 페이지 헤더, 서브헤더 제목 설정
-st.header("이마트 StoreProduct개발2팀페이지에 오신걸 환영합니다👋")
-st.subheader("스트림릿 기능 맛보기")
+st.header("이마트 StoreProduct개발2팀 Streamlit 페이지에 오신걸 환영합니다👋")
+st.subheader("페이지 분할 기능")
+st.markdown('---')
 
 # 페이지 컬럼 분할(예: 부트스트랩 컬럼, 그리드)
 cols = st.columns((1, 1, 2))
@@ -80,7 +83,8 @@ chart_data = pd.DataFrame(
 cols[2].line_chart(chart_data)
 
 
-
+st.subheader("입출력 Form 기능")
+st.markdown('---')
 
 # 버튼 클릭
 button = st.button('버튼을 눌러보세요')
@@ -178,3 +182,49 @@ number = st.number_input(
 )
 st.write('당신이 입력하신 나이는:  ', number)
 
+st.subheader("탭 분할 기능")
+st.markdown('---')
+
+
+tab1, tab2, tab3 = st.tabs(['Cat', 'Dog', '고양이 갤러리'])
+
+with tab1:
+    st.header('Cat')
+    st.image('https://static.streamlit.io/examples/cat.jpg')
+    
+with tab2:
+    st.header('Dog')
+    st.image('https://static.streamlit.io/examples/dog.jpg')
+
+with tab3:
+    st.header('고양이 갤러리')
+    # API 호출
+    response = requests.get("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=100")
+    data = response.json()
+
+    # 이미지 출력
+    images = []
+    captions = []
+    for i in range(0, len(data)):
+        img_url = data[i]['url']
+        response = requests.get(img_url)
+        img = Image.open(BytesIO(response.content))
+        images.append(img)
+        captions.append(f"Image {i+1}")
+
+    st.image(images, caption=captions, width=200)
+
+
+st.subheader("탭 분할 기능")
+st.markdown('---')
+
+
+def get_random_num_list(n):
+    return [random.randint(1, 100) for _ in range(n)]
+
+
+sample_data = pd.DataFrame(np.random.rand(10, 10), columns=[f"col{i}" for i in range(10)])
+st.write(sample_data)  
+
+st.write("## 그래프") 
+st.area_chart(sample_data)
