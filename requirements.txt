@@ -1,2 +1,5 @@
 finance-datareader==0.9.70
 plotly==5.18.0
+matplotlib
+yfinance
+pandas

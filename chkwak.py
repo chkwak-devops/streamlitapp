@@ -1,5 +1,3 @@
-# app.py
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -62,20 +60,74 @@ with tab1:
         # API 호출
         response = requests.get("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=10")
         data = response.json()
+
+
+        col1,col2 = st.columns([1,1])
+        with col1 : 
+            images = []
+            captions = []
+            for i in range(0, round(len(data)/2)):
+                img_url = data[i]['url']
+                response = requests.get(img_url)
+                img = Image.open(BytesIO(response.content))
+                images.append(img)
+                captions.append(f"Image {i+1}")
+
+            st.image(images, caption=captions, width=200)
+
+        with col2 : 
+            images = []
+            captions = []
+            for i in range(round(len(data)/2), len(data)):
+                img_url = data[i]['url']
+                response = requests.get(img_url)
+                img = Image.open(BytesIO(response.content))
+                images.append(img)
+                captions.append(f"Image {i+1}")
+
+            st.image(images, caption=captions, width=200)
+
+
+
+
+
+            # with col1 : 
+            #     img_url = data[i]['url']
+            #     response = requests.get(img_url)
+            #     img = Image.open(BytesIO(response.content))
+            #     captions.append(f"Image {i+1}")
+            #     st.image(images, caption=captions, width=200)
+
+      
+
+        # with col1 :
+        # # column 1 에 담을 내용
+        #     st.title('here is column1')
+        # with col2 :
+        # # column 2 에 담을 내용
+        #     st.title('here is column2')
+        #     st.checkbox('this is checkbox1 in col2 ')
+
         
 
-        # 이미지 출력
-        images = []
-        captions = []
-        for i in range(0, len(data)):
-            img_url = data[i]['url']
-            response = requests.get(img_url)
-            img = Image.open(BytesIO(response.content))
-            images.append(img)
-            captions.append(f"Image {i+1}")
+        # # 이미지 출력
+        # images = []
+        # captions = []
+        # for i in range(0, len(data)):
+        #     img_url = data[i]['url']
+        #     response = requests.get(img_url)
+        #     img = Image.open(BytesIO(response.content))
+        #     images.append(img)
+        #     captions.append(f"Image {i+1}")
 
-        st.subheader('고양이 갤러리')
-        st.image(images, caption=captions, width=200)
+        # st.subheader('고양이 갤러리')
+        # st.image(images, caption=captions, width=200)
+
+
+
+
+
+
 
 with tab2:
     st.subheader('챠트')

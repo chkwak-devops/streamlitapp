@@ -1,7 +1,6 @@
 import streamlit as st
 import random
 
-
 def get_random_num_list(n):
     return [random.randint(1, 100) for _ in range(n)]
 
