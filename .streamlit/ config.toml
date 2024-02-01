@@ -1,3 +1,4 @@
 # config.toml 파일
 [theme]
 base="dark"
+runOnSave=true

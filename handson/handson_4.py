@@ -1,7 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-from datetime import datetime as dt
 import datetime
 import random
 
@@ -22,10 +19,6 @@ def generate_lotto():
 def getNowTime(): 
     now = datetime.datetime.now()
     return f"생성시간 : {now.strftime('%Y-%m-%d %H:%M:%S')}"
-
-
-# st.subheader(f'행운의 번호: :green[{generate_lotto()}]')
-# st.write(f"생성된 시각: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}")
 
 
 # 사이드 바 설정 
