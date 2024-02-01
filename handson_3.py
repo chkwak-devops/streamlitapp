@@ -6,8 +6,6 @@ import datetime
 
 st.title(':three: Data 예제')
 
-
-
 dataframe = pd.DataFrame({
     'A' : ['spam', 'eggs', 'spam', 'eggs'] * 6,
     'B' : ['alpha', 'beta', 'gamma'] * 8,

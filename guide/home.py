@@ -49,7 +49,7 @@ def run():
       - Check out (https://share.streamlit.io)      
     - 화면 레코딩 기능 제공
     - 단기간에 기획 아이디어 prototype 신속 구현 가능, 특히 해커톤 행사에 효과적
-      - 숙명여대 해커톤 (https://www.smileshark.kr/post/2023-sookmyung-x-aws-x-streamlit-hackathon-mentoring-review-aws-tech-support)  
+      - 숙명여대 해커톤 사례 참고(https://www.smileshark.kr/post/2023-sookmyung-x-aws-x-streamlit-hackathon-mentoring-review-aws-tech-support)  
     """)
 
     st.markdown("""
@@ -58,6 +58,13 @@ def run():
     > vscode download [https://code.visualstudio.com/download](https://code.visualstudio.com/download)    
     - anaconda 환경 구성(권장)
     > anaconda download [https://www.anaconda.com/download](https://www.anaconda.com/download)
+    - handson git clone 후 VSCode IDE 실행 
+    ```
+    $ git clone https://github.com/chkwak-devops/streamlitapp
+    $ cd streamlitapp
+    $ code .
+    ```
+    - streamlit 설치
     ```
     $ conda create -n streamlit-app python=3.9
     $ conda env list
@@ -72,24 +79,6 @@ def run():
     $ pip install -r requirements.txt
 
     ```
-    - handson git clone 
-    ```
-    $ git clone https://github.com/chkwak-devops/streamlitapp
-
-    ```    
-    - VSCode IDE 실행
-    ```
-    $ cd streamlitapp
-    $ code .
-    ```
-
-    - python 개발 환경 설정
-    ```
-    $ conda create -n streamlit-app python=3.9
-    $ conda env list
-    $ conda activate streamlit-app
-    ```
-
     - streamlit 실행
     ```
     $ streamlit run {작성 파일명}

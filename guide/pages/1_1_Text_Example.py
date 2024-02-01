@@ -1,8 +1,6 @@
 
 
 import streamlit as st
-import inspect
-import textwrap
 import pandas as pd
 import pydeck as pdk
 from utils import show_code
@@ -116,7 +114,6 @@ def mapping_demo():
 st.set_page_config(page_title="Text Example", page_icon="🌍")
 st.markdown("# Text 예시")
 st.markdown("___")
-# st.sidebar.header("Kwak Demo")
 
 mapping_demo()
 
