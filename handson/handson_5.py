@@ -4,8 +4,6 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 from datetime import datetime as dt
-import datetime
-import random
 import requests
 
 st.title(':five 이미지 갤러리 예제')
