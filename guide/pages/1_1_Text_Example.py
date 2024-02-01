@@ -110,6 +110,12 @@ def mapping_demo():
     st.latex(r'\sqrt{x^2+y^2}=1')
 
 
+    st.image('flower.png', width=400, caption='streamlit')
+    st.image('https://stimg.emart.com/store/images/new/common/gnb01.png', caption='Emart Logo')
+
+
+
+
 
 st.set_page_config(page_title="Text Example", page_icon="🌍")
 st.markdown("# Text 예시")

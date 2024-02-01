@@ -41,7 +41,7 @@ def run():
     ## Streamlit 장점 
     - 파이썬으로 작성한 코드를 웹기반으로 간편하게 제작 후 배포 가능 
     - 풀스택(프런트와 백엔드 통합) 구현 가능
-    - 잘 정리된 사용법 및 다양한 예시 제공 
+    - 예시 중심의 간결한 documnet 사이트 제공 
       - Check out (https://docs.streamlit.io)    
     - 활발한 갤러리, 커뮤니티 활동
       - Check out (https://streamlit.io/gallery), (https://streamlit.io/community)
@@ -58,13 +58,17 @@ def run():
     > vscode download [https://code.visualstudio.com/download](https://code.visualstudio.com/download)    
     - anaconda 환경 구성(권장)
     > anaconda download [https://www.anaconda.com/download](https://www.anaconda.com/download)
-    - handson git clone 후 VSCode IDE 실행 
+    - handson용 git clone
     ```
     $ git clone https://github.com/chkwak-devops/streamlitapp
+    ```
+    - VSCode IDE 실행 
+    ```
     $ cd streamlitapp
     $ code .
     ```
-    - streamlit 설치
+
+    - python 환경 설정
     ```
     $ conda create -n streamlit-app python=3.9
     $ conda env list
