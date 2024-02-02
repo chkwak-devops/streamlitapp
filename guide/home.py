@@ -27,9 +27,11 @@ def run():
     st.write("# Streamlit Guide! 👋")
     st.sidebar.success("Select a demo above.")
 
+
+
     st.markdown("""
     ## Streamlit 소개 
-    The fastest way to build and share data apps
+    #### The fastest way to build and share data apps
     가장 빠르게 데이터 어플리케이션을 만들 수 있는 방법을 제공하는 파이썬 기반 미니멀 프레임워크 
     - Check out [streamlit.io](https://streamlit.io)
 

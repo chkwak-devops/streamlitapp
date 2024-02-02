@@ -15,9 +15,13 @@ def mapping_demo():
     st.write('this is a write')
     # emoji: https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
     st.write(':blue[버튼]안녕하세요 :sparkles:')
-    st.code('this is a code')  
+    # 코드 표시
+    sample_code = '''
+    def function():
+        print('hello, world')
+    '''
+    st.code(sample_code, language="python")
     st.text('this is a text')
-
 
     st.markdown('''
                 
@@ -72,9 +76,7 @@ def mapping_demo():
 
     ''')
 
-
     st.divider()
-
 
 
     # 특수 이모티콘 삽입 예시
@@ -90,13 +92,6 @@ def mapping_demo():
     # 캡션 적용
     st.caption('캡션을 한 번 넣어 봤습니다')
 
-    # 코드 표시
-    sample_code = '''
-    def function():
-        print('hello, world')
-    '''
-    st.code(sample_code, language="python")
-
     # 일반 텍스트
     st.text('일반적인 텍스트를 입력해 보았습니다.')
 
@@ -109,10 +104,8 @@ def mapping_demo():
     # LaTex 수식 지원
     st.latex(r'\sqrt{x^2+y^2}=1')
 
-
-    st.image('flower.png', width=400, caption='streamlit')
-    st.image('https://stimg.emart.com/store/images/new/common/gnb01.png', caption='Emart Logo')
-
+    st.markdown('- 문서에 **이미지**도 삽입할 수 있습니다.')
+    st.image('https://stimg.emart.com/store/images/new/common/gnb01.png', width=200,  caption='Emart Logo')
 
 
 
