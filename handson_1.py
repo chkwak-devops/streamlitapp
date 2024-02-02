@@ -11,13 +11,13 @@ st.title(':one: Hello Streamlit!! ')
 # st.write('this is a write')
 # # emoji: https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
 # st.write(':blue[버튼]안녕하세요 :sparkles:')
-
 # code = '''def hello():
 #     print("Hello, Streamlit!")'''
 # st.code(code, language='python')
 # st.text('this is a text')
 
 
+# 마크다운 사용법 https://gist.github.com/ihoneymon/652be052a0727ad59601
 # st.markdown('''
 # ---
 # __Advertisement :)__
@@ -57,14 +57,14 @@ st.title(':one: Hello Streamlit!! ')
 # + Very easy!
 # ''')
 
+
+# st.header('이미지 표시 예제', divider='gray')
 # st.image('flower.png', width=400, caption='streamlit')
 # st.image('https://stimg.emart.com/store/images/new/common/gnb01.png', caption='Emart Logo')
 
 
 # st.header('수평 LAYOUT 설정 예제', divider='gray')
-
 # cols  = st.columns([1,1,1,1,])
-
 # with cols[0] :
 #   # column 1 영역
 #   st.write("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
