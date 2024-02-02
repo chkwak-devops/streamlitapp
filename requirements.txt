@@ -3,4 +3,5 @@ plotly==5.18.0
 matplotlib
 yfinance
 pandas
+numpy
 watchdog

@@ -27,8 +27,6 @@ def run():
     st.write("# Streamlit Guide! 👋")
     st.sidebar.success("Select a demo above.")
 
-
-
     st.markdown("""
     ## Streamlit 소개 
     #### The fastest way to build and share data apps
@@ -43,7 +41,7 @@ def run():
     ## Streamlit 장점 
     - 파이썬으로 작성한 코드를 웹기반으로 간편하게 제작 후 배포 가능 
     - 풀스택(프런트와 백엔드 통합) 구현 가능
-    - 예시 중심의 간결한 documnet 사이트 제공 
+    - 예시 중심의 간결한 document 사이트 제공 
       - Check out (https://docs.streamlit.io)    
     - 활발한 갤러리, 커뮤니티 활동
       - Check out (https://streamlit.io/gallery), (https://streamlit.io/community)
@@ -91,7 +89,6 @@ def run():
     ```
     
     """)
-
 
 
 if __name__ == "__main__":
