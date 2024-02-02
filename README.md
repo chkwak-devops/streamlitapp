@@ -3,7 +3,6 @@
     가장 빠르게 데이터 어플리케이션을 만들 수 있는 방법을 제공하는 파이썬 기반 미니멀 프레임워크 
     - Check out [streamlit.io](https://streamlit.io)
 
-
     ## Streamlit 장점 
     - 파이썬으로 작성한 코드를 웹기반으로 간편하게 제작 후 배포 가능 
     - 풀스택(프런트와 백엔드 통합) 구현 가능
@@ -14,7 +13,6 @@
     - Streamlit 자체 배포 관리 기능 제공(최대 3개까지 서브도메인 포함 무료 제공) 
       - Check out (https://share.streamlit.io)      
     - 화면 레코딩 기능 제공
-
 
     ## Streamlit 개발 환경 구성 
     - VSCode 설치 
