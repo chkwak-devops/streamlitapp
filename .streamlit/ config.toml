@@ -1,4 +1,8 @@
-# config.toml 파일
+# path location : ~/.streamlit/config.toml 
+# https://docs.streamlit.io/library/advanced-features/configuration
+
 [theme]
-base="dark"
-runOnSave=true
+base = "light"
+
+[server]
+runOnSave = true

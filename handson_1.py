@@ -1,22 +1,8 @@
 import streamlit as st
 import time
 
-st.title(':one: 정적페이지 작성 예제')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+st.title(':one: Hello Streamlit!! ')
 
 
 # st.title('this is title')
@@ -75,10 +61,7 @@ st.title(':one: 정적페이지 작성 예제')
 # st.image('https://stimg.emart.com/store/images/new/common/gnb01.png', caption='Emart Logo')
 
 
-
-
-
-# st.header(' LAYOUT 설정 예제', divider='gray')
+# st.header('수평 LAYOUT 설정 예제', divider='gray')
 
 # cols  = st.columns([1,1,1,1,])
 
@@ -96,43 +79,32 @@ st.title(':one: 정적페이지 작성 예제')
 # with cols[3] :
 #   # column 4 영역
 #   st.image('flower.png', width=100, caption='streamlit')
-  
 
 
-
-
-
-# st.header('Tab  설정 예제', divider='gray')
+# st.header('Tab 설정 예제', divider='gray')
 # tab1, tab2, tab3= st.tabs(['Tab A' , 'Tab B' , 'Tab C'])
 # with tab1:
 #   st.subheader("Tab A")
 #   st.write('tab A 영역 내용을 표시합니다. ')
 #   st.image('https://stimg.emart.com/upload/site/20240126_0957021_009.jpg')
-    
+
 # with tab2:
 #   st.subheader("Tab B")
 #   st.write('tab B 영역 내용을 표시합니다. ')
-#   st.image('https://stimg.emart.com/upload/site/20240125_1545015_063.jpg')  
+#   st.image('https://stimg.emart.com/upload/site/20240125_1545015_063.jpg')
 
 # with tab3:
 #   st.subheader("Tab C")
 #   st.write('tab B 영역 내용을 표시합니다. ')
-#   st.image('https://stimg.emart.com/upload/site/20230607_1945005_315.jpg')  
-
+#   st.image('https://stimg.emart.com/upload/site/20230607_1945005_315.jpg')
 
 
 # st.header(' Sidebar 설정 예제', divider='gray')
-# with st.sidebar: 
+# with st.sidebar:
 #     st.title('사이드 메뉴 영역')
 
 #     with st.expander("See explanation"):
 #         st.write('''
-#         생성형 AI 해커톤 대회 제출용 서비스 컨셉을 소개합니다. 
+#         생성형 AI 해커톤 대회 제출용 서비스 컨셉을 소개합니다.
 #         ''')
 #         st.image("https://static.streamlit.io/examples/dice.jpg")
-
-
-
-    
-
-
